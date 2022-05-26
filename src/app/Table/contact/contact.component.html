@@ -1,0 +1,18 @@
+<button routerLink="/contact"> contact us</button>
+
+<button routerLink="/home">Home</button>
+
+<form [formGroup]="registerform">
+    <div>
+        <input type="text" placeholder="email" formControlName="email">
+        <p *ngIf="email.touched && email.invalid">Please Enter Email</p>
+    </div>
+    <div>
+        <input type="password" placeholder="password" formControlName="password">
+        <div *ngIf="password.touched && password.invalid">Please Enter password</div>
+    </div>
+    <div>
+        <button type="button" Submit [disabled]="!registerform.valid" (click)="submitFunction()">Login</button>
+    </div>
+</form>
+<router-outlet></router-outlet>
